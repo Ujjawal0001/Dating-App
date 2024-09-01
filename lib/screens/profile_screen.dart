@@ -1,3 +1,4 @@
+import 'package:dating_app/screens/home_screen.dart';
 import 'package:dating_app/screens/loginSignup_screen.dart';
 import 'package:flutter/material.dart';
 class ProfilePage extends StatefulWidget {
@@ -51,10 +52,10 @@ class _ProfilePageState extends State<ProfilePage> {
                     _isMessageIconSelected = false;
 
                   });
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => WhatshotPage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
                 },
               ),
               IconButton(
