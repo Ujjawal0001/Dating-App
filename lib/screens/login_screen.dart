@@ -1,5 +1,6 @@
 // login_screen.dart
 import 'package:dating_app/screens/accout_detail.dart';
+import 'package:dating_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dating_app/screens/signup_screen.dart';
 import 'package:dating_app/screens/forgot_password_screen.dart';
@@ -41,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => AccountDetailPage()),
+                      MaterialPageRoute(builder: (context) => ProfilePage()),
                     );
                   },
                   child: Text(

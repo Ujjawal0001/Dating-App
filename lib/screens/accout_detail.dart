@@ -3,7 +3,18 @@ import 'package:flutter/material.dart';
 class AccountDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+
+          appBar: AppBar(
+          leading: IconButton(
+          icon :Icon(Icons.arrow_back_ios_new),
+      onPressed: (){
+        Navigator.pop(context);
+      },
+    ),
+          ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -285,6 +296,6 @@ class AccountDetailPage extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),);
   }
 }

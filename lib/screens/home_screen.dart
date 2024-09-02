@@ -1,3 +1,4 @@
+import 'package:dating_app/screens/message_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dating_app/screens/profile_screen.dart';
 
@@ -49,6 +50,12 @@ class _HomeScreenPageState extends State<HomeScreen> {
       debugShowCheckedModeBanner: false, // Removes the debug banner
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon :Icon(Icons.arrow_back_ios_new),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -92,10 +99,10 @@ class _HomeScreenPageState extends State<HomeScreen> {
                     _isMessageIconSelected = true;
                   });
                   // Uncomment below to navigate to the message screen
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => MessagePage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MessageScreen()),
+                  );
                 },
               ),
             ],
@@ -106,6 +113,7 @@ class _HomeScreenPageState extends State<HomeScreen> {
         body: Column(
           children: [
             // Image with rounded corners and overlays
+
             Expanded(
               child: PageView.builder(
                 itemCount: images.length,

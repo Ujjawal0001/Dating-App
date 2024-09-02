@@ -1,5 +1,7 @@
+import 'package:dating_app/screens/accout_detail.dart';
 import 'package:dating_app/screens/home_screen.dart';
 import 'package:dating_app/screens/loginSignup_screen.dart';
+import 'package:dating_app/screens/message_screen.dart';
 import 'package:flutter/material.dart';
 class ProfilePage extends StatefulWidget {
   @override
@@ -26,6 +28,12 @@ class _ProfilePageState extends State<ProfilePage> {
       // Removes the debug banner
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon :Icon(Icons.arrow_back_ios_new),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -66,10 +74,10 @@ class _ProfilePageState extends State<ProfilePage> {
                     _isWhatshotIconSelected = false;
                     _isMessageIconSelected = true;
                   });
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => MessagePage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MessageScreen()),
+                  );
                 },
               ),
             ],
@@ -177,6 +185,9 @@ class _ProfilePageState extends State<ProfilePage> {
               leading: Icon(Icons.account_circle,color: Colors.blue,),
               title: Text('Account Details'),
               onTap: () {
+                Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => AccountDetailPage()),
+                );
                 // Handle navigation to Account Details
               },
             ),
